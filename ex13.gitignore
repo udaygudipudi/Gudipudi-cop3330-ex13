@@ -1,0 +1,37 @@
+/*
+ *  UCF COP3330 Fall 2021 Assignment 1 Solution
+ *  Copyright 2021 Uday Gudipudi
+ */
+
+import java.util.*;
+class Main {
+  public static void main(String[] args) {
+  
+    Scanner scan = new Scanner(System.in);
+
+    System.out.print("Enter the principal: ");
+    double principal = scan.nextDouble();
+
+    System.out.print("Enter the rate of interest: ");
+    double interest = scan.nextDouble();
+
+    double uinterest = interest / 100;
+
+    System.out.print("Enter the number of years: ");
+    int years = scan.nextInt();
+
+    System.out.print("What is the number of times the interest is compounded per year? ");
+    int compound = scan.nextInt();
+
+    double first = (1 + (uinterest/compound));
+
+    double second = compound * years;
+
+    double third = Math.pow(first,second);
+
+    double a = principal * third;
+
+    System.out.printf("$%.2f invested at %.2f%% for %d years compounded %d times per year is $%.2f. ",principal, interest, years, compound, a);
+
+  }
+}
